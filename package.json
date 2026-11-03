@@ -1,5 +1,6 @@
 {
-  "name": "back-end",
+  "name": "backend-template-js-prisma",
+  "version": "1.0.0",
   "private": true,
   "packageManager": "npm@10.9.3",
   "type": "module",
@@ -7,48 +8,24 @@
     "node": "^22.18.0 || ^24.11.0 || >=26.0.0"
   },
   "scripts": {
-    "build": "tsdown",
-    "composer:deploy": "prisma deploy",
-    "composer:dev": "prisma dev",
+    "dev": "node --env-file=.env --watch src/index.js",
+    "start": "node --env-file=.env src/index.js",
     "contract:emit": "prisma contract emit",
     "db:init": "prisma db init",
+    "db:sign": "prisma db sign",
     "db:update": "prisma db update",
-    "db:verify": "prisma db verify",
-    "deploy": "npm run build && npm run composer:deploy",
-    "dev": "tsx watch src/index.ts",
-    "dev:composer": "npm run build && npm run composer:dev",
-    "migrate": "prisma db migrate",
-    "migration:plan": "prisma migration plan",
-    "migration:show": "prisma migration show",
-    "migration:status": "prisma migration status",
-    "start": "node dist/server.mjs"
+    "db:verify": "prisma db verify"
   },
   "dependencies": {
-    "@prisma/composer": "0.35.0",
-    "@prisma/composer-prisma-cloud": "0.35.0",
     "@prisma/orm-mongo": "8.0.0-rc.20",
-    "alchemy": "2.0.0-beta.83",
-    "arktype": "^2.2.9",
+    "dotenv": "^17.2.3",
+    "express": "^5.3.0",
     "mongodb": "^7.7.0"
   },
   "devDependencies": {
-    "@types/node": "^26.6.5",
-    "prisma": "8.0.0-rc.28",
-    "tsdown": "^0.23.1",
-    "tsx": "^4.23.15",
-    "typescript": "^6.0.3"
+    "prisma": "8.0.0-rc.28"
   },
-  "overrides": {
-    "effect": "4.0.3",
-    "@effect/platform-bun": "4.0.3",
-    "@effect/platform-node": "4.0.3",
-    "@effect/platform-node-shared": "4.0.3",
-    "@effect/sql-d1": "4.0.3",
-    "@effect/sql-sqlite-do": "4.0.3",
-    "@effect/vitest": "4.0.3",
-    "@vitejs/devtools": "0.7.6",
-    "alchemy": {
-      "mongodb": "^7.7.0"
-    }
+  "allowScripts": {
+    "esbuild@0.28.2": true
   }
 }

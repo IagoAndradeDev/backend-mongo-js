@@ -1,5 +1,19 @@
+# Dependências
 node_modules/
+
+# Build
 dist/
+
+# Variáveis de ambiente
 .env
+.env.*
+!.env.example
+
+# Prisma Composer
 /.alchemy
 /.prisma-composer
+
+.agents/
+.claude/
+.cursor/
+.devin/

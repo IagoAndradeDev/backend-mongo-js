@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@prisma/orm-mongo": "8.0.0-rc.20",
+    "cors": "^2.8.6",
     "dotenv": "^17.2.3",
     "express": "^5.3.0",
     "mongodb": "^7.7.0"
